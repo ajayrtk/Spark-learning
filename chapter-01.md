@@ -14,6 +14,8 @@ Service is a method for exposing a network application that is running as one or
 4. When using deployment while updating the image version, the Pods are terminated and new Pods take the place of other Pods.
 5. Pods are very dynamic that i.e. they come and go on the Kubernetes cluster and on any of the available nodes and it would be difficult to   access the Pods as the Pods IP address changes once it is recreated.
 
+![My Image](images/my-image.jpg)
+
 ## Service Object:
 1. The Service API, part of Kubernetes, is an abstraction to help you expose groups of Pods over a network.
 2. Service object is a logical bridge between Pods and the end user which provide a Virtual IP(VIP).
