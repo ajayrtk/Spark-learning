@@ -17,7 +17,7 @@ Primarily refers to data sets that are too large or complex to be dealt with by 
 * Veracity - Messiness data
 * Value
 
-![My Image](images/data_exploding.png)
+![My Image](images/data_exploding.PNG)
 
 ![My Image](images/bigdata_deployment_view.png)
 
