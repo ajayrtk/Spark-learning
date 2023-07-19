@@ -33,8 +33,10 @@ Primarily refers to data sets that are too large or complex to be dealt with by 
 * 2014 - Become top-level Apache Project 
 * Founded the company Databricks
 
+## Big Data Deployment View:
 ![My Image](images/bigdata_deployment_view.png)
 
+## Big Data logical Architecture:
 ![My Image](images/yarn.png)
 
 ## What is Spark:
