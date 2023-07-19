@@ -56,11 +56,14 @@
 17. Great for Iterative algoriths (ML works on same data)
 18. Good for joining datasets
 
+## Spark Ecosystem:
+
+![My Image](images/bigdata_history.png)
 
 ## Spark Logical Architecture:
 
 
-![My Image](images/spark_logical_architecture.png)
+![My Image](images/spark_components_stack.png)
 
 
 * Unified Architecture
@@ -173,4 +176,7 @@ spark = SparkSession \
 ```
 * 1-1 relationship between SparkSession and Spark application
 * Replace with SQLContext | HiveContext (used prior to 2.0)
-* 
+
+# Structured Streaming:
+* Entry point to Spark SQL
+* Can perform SQL-like operations on Dataframe and Dataset
