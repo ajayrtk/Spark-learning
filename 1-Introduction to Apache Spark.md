@@ -4,6 +4,10 @@
 
 </header>
 
+##  Data Exploding:
+
+![My Image](images/data_exploding.PNG)
+
 ##  Big Data:
 
 Primarily refers to data sets that are too large or complex to be dealt with by traditional data-processing application software. 
@@ -16,11 +20,6 @@ Primarily refers to data sets that are too large or complex to be dealt with by 
   * Semi-Structured data (XML, log files)
 * Veracity - Messiness data
 * Value
-
-
-##  Data Exploding:
-
-![My Image](images/data_exploding.PNG)
 
 ## History of Big Data:
 
