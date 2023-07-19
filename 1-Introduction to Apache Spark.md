@@ -109,7 +109,7 @@
 * Support various algorithms - PageRank | Connected Components | Traingle Counting
 * Support operations like subgraph | Join vertices | aggregates messages
 
-## Structured Streaming:
+5. ### Structured Streaming:
 * Near real-time processing
 * Continous Streaming model
 * Structured Streaming API (2.x above)
