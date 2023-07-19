@@ -159,7 +159,7 @@
 * Default available in a shell - a variable with name (spark)
 * In the application we need to create using the SparkSession builder pattern
 ```
-# In Python
+# Python code
 # The entry point into all functionality in Spark is the SparkSession class.
 # To create a basic SparkSession, just use SparkSession.builder
 
