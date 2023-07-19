@@ -1,9 +1,7 @@
 <header>
 
-# Kubernetes Service
-A Kubernetes Service is an abstraction layer that defines a logical set of Pods and enables external traffic exposure, load balancing, and service discovery for those Pods.
+# Introduction to Apache Spark
 
-Service is a method for exposing a network application that is running as one or more Pods in your cluster.
 </header>
 
 ## Why Service is needed:
