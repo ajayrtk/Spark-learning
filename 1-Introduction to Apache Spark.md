@@ -62,9 +62,7 @@
 
 ## Spark Logical Architecture:
 
-
 ![My Image](images/spark_components_stack.png)
-
 
 * Unified Architecture
 * Benefit of stack - Changes in core - inherit above
@@ -186,6 +184,9 @@ spark = SparkSession \
 * Replace with SQLContext | HiveContext (used prior to 2.0)
 
 ## Sparks' Distribution Execution:
+
+![My Image](images/spark_components_architecture.png)
+
   Spark application consist of:
 
   1. Spark Driver
@@ -217,8 +218,11 @@ spark = SparkSession \
       * YARN
       * Kubernetes
 
-  4. Deployment Modes
-  
+## Deployment Modes:
+
+![My Image](images/spark_components_architecture.png)
+
+
 
 
    
