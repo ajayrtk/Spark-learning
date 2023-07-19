@@ -220,7 +220,7 @@ spark = SparkSession \
 
 ## Deployment Modes:
 
-![My Image](images/spark_components_architecture.png)
+![My Image](images/deployments_mode.png)
 
 
 
