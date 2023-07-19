@@ -106,7 +106,15 @@
 * Similar to tools like Neo4J, Girage
 * Used for graphical computations
 * Directed graph - vertex | edges concepts
+* Support various algorithms - PageRank | Connected Components | Traingle Counting
 * Support operations like subgraph | Join vertices | aggregates messages
+
+## Structured Streaming:
+* Near real-time processing
+* Continous Streaming model
+* Structured Streaming API (2.x above)
+* DStream API (1.x version)
+* View stream as continous growing table
 
 ## Spark Use Cases:
 * Scalable ETL
@@ -177,6 +185,7 @@ spark = SparkSession \
 * 1-1 relationship between SparkSession and Spark application
 * Replace with SQLContext | HiveContext (used prior to 2.0)
 
+
+
 # Structured Streaming:
-* Entry point to Spark SQL
 * Can perform SQL-like operations on Dataframe and Dataset
