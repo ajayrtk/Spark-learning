@@ -11,7 +11,6 @@
 ##  Big Data:
 
 Primarily refers to data sets that are too large or complex to be dealt with by traditional data-processing application software. 
-* Data Exploding
 * Volume
 * Velocity
 * Variety
