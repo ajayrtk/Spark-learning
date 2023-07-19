@@ -6,7 +6,7 @@
 
 ##  Data Exploding:
 
-![My Image](images/data_exploding.PNG)
+![My Image](images/data_exploding.png)
 
 ##  Big Data:
 
