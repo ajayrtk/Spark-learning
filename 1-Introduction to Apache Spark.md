@@ -185,7 +185,3 @@ spark = SparkSession \
 * 1-1 relationship between SparkSession and Spark application
 * Replace with SQLContext | HiveContext (used prior to 2.0)
 
-
-
-# Structured Streaming:
-* Can perform SQL-like operations on Dataframe and Dataset
