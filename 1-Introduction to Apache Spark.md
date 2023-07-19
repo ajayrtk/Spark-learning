@@ -59,4 +59,70 @@
 
 ## Spark Logical Architecture:
 
+* Unified Architecture
+* Benefit of stack - Changes in core - inherit above
+
+1. ### Spark Core
+* Heart of the Spark framework
+* Provide execution engine
+* Inbult memory computing
+* Responsible to perform I/O function
+* Task Scheduling
+* Monitoring
+* Distribution
+* Fault Recovery
+* Memory management
+
+2. ### SparkSQL
+* Provide support for structured data
+* Allow query the data via sQL
+* Integrated - Seamlessly mix SQL query with Spark programs
+* Uniform data access - connect to any data source in the same way
+* Hive integration - run SQL or HSQL queries
+* Connnect through JDBC or  ODBC
+
+3. ### Dataframe
+* Abstraction for SparkSQL
+* Distributed colleciton of data ordered into named column
+* Catalyst - extensible optimizer | optimization framework to improve productivity and performance of queries
+* Concept of dataset
+
+4. ### MLib
+* Support various ML algorithms
+* Approx 10x faster than Mahout
+* Can be called from Java | Scala | Python
+* Scalable ML
+* Easily integrate with other tools | framework
+
+4. ### GraphX
+* Graph computation engine
+* Similar to tools like Neo4J, Girage
+* Used for graphical computations
+* Directed graph - vertex | edges concepts
+* Support operations like subgraph | Join vertices | aggregates messages
+
+## Spark Use Cases:
+* Scalable ETL
+* Stream processing 
+* ML
+* Data integration
+* Interactive Analysis
+* Iterative algorithm
+* Social graph process
+* Real time fraud detection
+* Recommendation engine
+* Customer segmentation
+
+## Spark Real World Use Cases:
+* Uber
+* Pinterest
+* ebay
+* Alibaba
+* Netflix
+* Trip Advisor
+
+
 ![My Image](images/spark_logical_architecture.png)
+
+
+
