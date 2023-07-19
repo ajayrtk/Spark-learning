@@ -185,3 +185,40 @@ spark = SparkSession \
 * 1-1 relationship between SparkSession and Spark application
 * Replace with SQLContext | HiveContext (used prior to 2.0)
 
+## Sparks' Distribution Execution:
+  Spark application consist of:
+
+  1. Spark Driver
+    * Process where the main method of program runs
+    * Controller of the Spark application
+    * Orchestrate paralle operations on the Spark cluster
+    * Cummunicate with other components like Sparl executor and cluster manager using SparkSession
+    * Instantiate SparkSession
+    * Request resources from cluster manager
+    * Transform Spark operation into DAG and schedule them
+    * Distributes execution as task across the Spark executor
+    * Maintain all the state of the Spark cluster
+    * Responsible for maintain the state of the application running in the cluster
+
+  2. Spark Executor
+    * Worker process responsible for running individual tasks in Spark jobs
+    * Runs of each worker nodes in the cluster
+    * Communicate with Driver and responsible for executing task on the worker
+    * Return state | result report back to the Driver
+    * Provide in memory storage for RDD through a daemon service called Block Manager
+    * Each application has own seperate executor processess
+  
+  3. Cluster Manager
+    * Has master and worker node
+    * Responsible for managing and allocating the resources
+    * Support 4 cluster manager
+      * Standalone
+      * Apache Mesos
+      * YARN
+      * Kubernetes
+
+  4. Deployment Modes
+  
+
+
+   
