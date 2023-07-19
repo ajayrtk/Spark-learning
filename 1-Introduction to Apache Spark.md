@@ -58,7 +58,7 @@
 
 ## Spark Ecosystem:
 
-![My Image](images/bigdata_history.png)
+![My Image](images/spark_ecosystem.png)
 
 ## Spark Logical Architecture:
 
