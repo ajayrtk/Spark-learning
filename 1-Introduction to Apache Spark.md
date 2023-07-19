@@ -62,19 +62,19 @@ Primarily refers to data sets that are too large or complex to be dealt with by 
 1. Open source
 2. Ease of use
 3. Fast (in memory)
-4. No boilerplate code (concise code) - High productivity
-5. Wide support - Databricks | Cloudera | MapR | IBM
-6. Support for multiple languages - Java | R | Python | Scala | SQL
-7. Fault tolerance
-8. Lazy evaluation
-9. Stream processing
-10. Integrate with Hadoop | NoSQL | Kafka etc.
-11. Unified framework for scalable DS, scalable ML, micro-batch
-12. Deployment - Mesos | YARN | Kubernetes | own cluster manager
-13. Immutable - RDD
-14. REPL - Read Evaluate Print Loop
-15. Interactive shell (Pyspark | Spark-shell)
-16. Scalability
+4. Fault tolerance
+5. Lazy evaluation
+6. Stream processing
+7. Immutable - RDD
+8. Scalability
+9. No boilerplate code (concise code) - High productivity
+10. Wide support - Databricks | Cloudera | MapR | IBM
+11. Support for multiple languages - Java | R | Python | Scala | SQL 
+12. Integrate with Hadoop | NoSQL | Kafka etc.
+13. Unified framework for scalable DS, scalable ML, micro-batch
+14. Deployment - Mesos | YARN | Kubernetes | own cluster manager 
+15. REPL - Read Evaluate Print Loop
+16. Interactive shell (Pyspark | Spark-shell) 
 17. Great for Iterative algorithms (ML works on the same data)
 18. Good for joining datasets
 
@@ -84,10 +84,10 @@ Primarily refers to data sets that are too large or complex to be dealt with by 
 
 ## Spark Logical Architecture:
 
-![My Image](images/spark_components_stack.png)
-
 * Unified Architecture
 * Benefit of the stack - Changes in core - inherit above
+
+![My Image](images/spark_components_stack.png)
 
 1. ### Spark Core
 * Heart of the Spark framework
