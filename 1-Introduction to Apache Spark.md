@@ -113,14 +113,14 @@
 * Interactive Analysis
 * Iterative algorithm
 * Social graph process
-* Real time fraud detection
+* Real-time fraud detection
 * Recommendation engine
 * Customer segmentation
 
 ## Spark Real World Use Cases:
 * Uber
 * Pinterest
-* ebay
+* eBay
 * Alibaba
 * Netflix
 * Trip Advisor
@@ -128,7 +128,7 @@
 ## Spark Shell:
 * Provide interactive data exploration (REPL)
 * It is a Spark application written in Scala
-* Offer command line environment with auto completion
+* Offer command line environment with auto-completion
 * Run ad hoc queries
 * Shell
   * Python - Pyspark
@@ -142,21 +142,27 @@
 * Get the current status of the Spark application
 * Set configuration
 * Pre-configured variable in the shell (sc)
-* In application we need to create (sc)
-* Used to create RDD | Broadcast variable | Accumlator
+* In the application we need to create (sc)
+* Used to create RDD | Broadcast variable | Accumulator
 * It was used before version 2.0
 
+## SQLContext:
+* Entry point to Spark SQL
+* Can perform SQL-like operations on Dataframe and Dataset
+  
 ## SparkSession:
 * Introduced in 2.0
 * Main Entry point to Spark functionality to create
   * RDD
   * Dataframe
   * Datasets
-* Default available in shell - variable with name (spark)
-* In application we need to create using Sparksession builder pattern
+* Default available in a shell - a variable with name (spark)
+* In the application we need to create using the SparkSession builder pattern
 ```
 # In Python
-# The entry point into all functionality in Spark is the SparkSession class. To create a basic SparkSession, just use SparkSession.builder
+# The entry point into all functionality in Spark is the SparkSession class.
+# To create a basic SparkSession, just use SparkSession.builder
+
 from pyspark.sql import SparkSession
 
 spark = SparkSession \
@@ -165,5 +171,6 @@ spark = SparkSession \
     .config("spark.some.config.option", "some-value") \
     .getOrCreate()
 ```
-* Netflix
-* Trip Advisor
+* 1-1 relationship between SparkSession and Spark application
+* Replace with SQLContext | HiveContext (used prior to 2.0)
+* 
