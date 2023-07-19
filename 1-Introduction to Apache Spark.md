@@ -4,6 +4,24 @@
 
 </header>
 
+##  Big Data:
+
+Primarily refers to data sets that are too large or complex to be dealt with by traditional data-processing application software. 
+* Data Exploding
+* Volume
+* Velocity
+* Variety
+  * Structured data (stringent Schema)
+  * Unstructured data (no schema)
+  * Semi-Structured data (XML, log files)
+* Veracity - Messiness data
+* Value
+
+![My Image](images/data_exploding.png)
+
+![My Image](images/bigdata_deployment_view.png)
+
+![My Image](images/yarn.png)
 ## History of Big Data:
 
 ![My Image](images/bigdata_history.png)
