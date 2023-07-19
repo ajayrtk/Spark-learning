@@ -17,7 +17,11 @@ Primarily refers to data sets that are too large or complex to be dealt with by 
 * Veracity - Messiness data
 * Value
 
-![My Image](images/yarn.png)
+
+##  Data Exploding:
+
+![My Image](images/data_exploding.PNG)
+
 ## History of Big Data:
 
 ![My Image](images/bigdata_history.png)
@@ -31,11 +35,9 @@ Primarily refers to data sets that are too large or complex to be dealt with by 
 * 2014 - Become top-level Apache Project 
 * Founded the company Databricks
 
-##  Data Exploding:
-
-![My Image](images/data_exploding.PNG)
-
 ![My Image](images/bigdata_deployment_view.png)
+
+![My Image](images/yarn.png)
 
 ## What is Spark:
 
