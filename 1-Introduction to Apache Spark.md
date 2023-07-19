@@ -54,4 +54,4 @@
 
 ## Spark Logical Architecture:
 
-![My Image](images/my-image.jpg)
+![My Image](images/bigdata_history.png)
