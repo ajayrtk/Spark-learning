@@ -4,7 +4,7 @@
 
 </header>
 
-## Spark Logical Architecture:
+## History of Big Data:
 
 ![My Image](images/bigdata_history.png)
 
@@ -58,6 +58,10 @@
 
 
 ## Spark Logical Architecture:
+
+
+![My Image](images/spark_logical_architecture.png)
+
 
 * Unified Architecture
 * Benefit of stack - Changes in core - inherit above
@@ -120,9 +124,6 @@
 * Alibaba
 * Netflix
 * Trip Advisor
-
-
-![My Image](images/spark_logical_architecture.png)
 
 
 
