@@ -125,5 +125,43 @@
 * Netflix
 * Trip Advisor
 
+## Spark Shell:
+* Provide interactive data exploration (REPL)
+* It is a Spark application written in Scala
+* Offer command line environment with auto completion
+* Run ad hoc queries
+* Shell
+  * Python - Pyspark
+  * Scala - Spark-shell
+* Automatic initialization of Spark session (spark) and Spark context (sc)
+* Tool to analyse data interactively
 
+## Spark Context:
+* Main Entry point to Spark functionality
+* Represent the connection to Spark cluster
+* Get the current status of the Spark application
+* Set configuration
+* Pre-configured variable in the shell (sc)
+* In application we need to create (sc)
+* Used to create RDD | Broadcast variable | Accumlator
+* It was used before version 2.0
 
+## SparkSession:
+* Introduced in 2.0
+* Main Entry point to Spark functionality to create
+  * RDD
+  * Dataframe
+  * Datasets
+* Default available in shell - variable with name (spark)
+* In application we need to create using Sparksession builder pattern
+```
+from pyspark.sql import SparkSession
+
+spark = SparkSession \
+    .builder \
+    .appName("Python Spark SQL basic example") \
+    .config("spark.some.config.option", "some-value") \
+    .getOrCreate()
+```
+* Netflix
+* Trip Advisor
