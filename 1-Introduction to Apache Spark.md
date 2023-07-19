@@ -4,6 +4,10 @@
 
 </header>
 
+## Spark Logical Architecture:
+
+![My Image](images/bigdata_history.png)
+
 ## Sparks' History:
 
 * Developed by Mataei Zaharia
@@ -52,6 +56,7 @@
 17. Great for Iterative algoriths (ML works on same data)
 18. Good for joining datasets
 
+
 ## Spark Logical Architecture:
 
-![My Image](images/bigdata_history.png)
+![My Image](images/spark_logical_architecture.png)
