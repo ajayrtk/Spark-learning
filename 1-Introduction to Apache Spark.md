@@ -13,11 +13,11 @@
 Primarily refers to data sets that are too large or complex to be dealt with by traditional data-processing application software. 
 * Volume
 * Velocity
+* Veracity - Messiness data
 * Variety
   * Structured data (stringent Schema)
   * Unstructured data (no schema)
   * Semi-Structured data (XML, log files)
-* Veracity - Messiness data
 * Value
 
 ## History of Big Data:
