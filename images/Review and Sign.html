@@ -1,0 +1,2082 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- suppressReferer attribute is used to disable referer policy(meta tag) in case of any exceptions like logging into sign server etc -->
+
+
+<!-- clearUserInfo is used to clear out sensitive user info for better security.
+     CAUTION: Only set this to true if you are NOT using the user object in your page. -->
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+
+
+	
+
+
+
+
+	
+	
+		
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+	
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+    
+		
+		
+		
+		
+		
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+            
+            
+            
+        
+
+        
+
+		
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+<html lang="en-US" class="">
+<head>
+  
+    <meta name="referrer" content="strict-origin-when-cross-origin"/>
+  
+
+	
+	
+		
+	
+
+
+	
+	
+		<title>Review and Sign</title>
+	
+
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta http-equiv=Content-Type content="text/html; charset=utf-8">
+  
+		
+			
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+		
+		
+  
+
+<meta name="robots" content="noindex" />
+
+	
+		
+	
+	
+
+<meta name="description" content="Free e-signature Site. The fastest way to get your documents signed. From Acrobat Sign, a free document process management service" />
+
+
+	
+		
+	
+	
+
+<meta name="keywords" content="e-signature, signatures, email signatures, fax  signatures, document management" />
+
+
+
+
+
+
+  
+  
+  
+    
+  
+
+
+
+
+<meta name="logging_uri" content="https://dc-api.adobe.io"/>
+<meta name="server_env" content="prod"/>
+    <script nonce="ar1b2p6qdivbky72gjav0z2v3" type="text/javascript">
+      
+      var dwrConfig = {
+        cookieAttributes: "; SameSite=None; secure"
+      };
+    </script>
+
+    
+
+
+
+
+
+
+
+
+
+
+<script nonce="ar1b2p6qdivbky72gjav0z2v3">
+  (function(d) {
+    var config = {
+        kitId: 'fqg8osp',
+        scriptTimeout: 3000,
+        async: true,
+        // Fix for DCES-4213971: While Typekit fonts are loading, html tag gets wf-loading class that sets
+        // it and all its children visibility:hidden. So when coachmark is initialized before this class
+        // is removed from html tag, there is no first tabbable field(they are all hidden) that coachmark should point to
+        // and it is not shown.
+        active: function () {
+          if (typeof App !== 'undefined' && typeof App.EventBus !== 'undefined') {
+            App.EventBus.trigger('typekit.loaded', {active:true});
+          }
+        },
+
+        inactive: function () {
+          if (typeof App !== 'undefined' && typeof App.EventBus !== 'undefined') {
+            App.EventBus.trigger('typekit.loaded', {active:false});
+          }
+        }
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+    
+    
+        
+    
+
+
+
+
+
+
+<link nonce="ar1b2p6qdivbky72gjav0z2v3" rel="Shortcut Icon" href="/images/favicon.2.ico"
+	type="image/x-icon" />
+
+    
+    
+
+
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+    
+    
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://secure.eu1.echocdn.com/resource/N1483361651/bundles/app-theme.css" nonce="ar1b2p6qdivbky72gjav0z2v3" />
+
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://secure.eu1.echocdn.com/resource/N1214024107/bundles/esignJS.css" nonce="ar1b2p6qdivbky72gjav0z2v3" />
+
+
+
+
+
+
+
+
+
+<!--[if IE]>
+<style type="text/css">
+.signature-pad-wrapper .draw-canvas {
+  cursor: url('/images/esignJS/pen_cursor_ie.cur'), default;
+}
+</style>
+<![endif]-->
+
+
+<style type="text/css">
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+  .signature-pad-wrapper .draw-canvas {
+    cursor: url('/images/esignJS/pen_cursor_ie.cur'), default;
+  }
+}  
+</style>
+<link rel="stylesheet" type="text/css" media="screen" href="" nonce="ar1b2p6qdivbky72gjav0z2v3" lazyload_href="https://secure.eu1.echocdn.com/resource/N764981603/bundles/dcSignPanel.css" />
+
+
+<script nonce="ar1b2p6qdivbky72gjav0z2v3"  type="text/javascript">if(!JAWR){var JAWR = {};};;JAWR.jawr_dwr_path='/ajax';JAWR.dwr_sessionId='f7f53dbe0b64a2e350a075ca0aa821c28fa6bb8aa34c979d';JAWR.dwr_scriptSessionId='OdZUT7xQxPoGGkf7unNMgwZQTddEnXhAPBo';JAWR.app_context_path='';</script>
+<script type="text/javascript" src="https://secure.eu1.echocdn.com/resource/638522919.en_US/bundles/translations.js" nonce="ar1b2p6qdivbky72gjav0z2v3" defer "" ></script>
+
+  
+    
+    
+    
+    
+    
+      <script type="text/javascript" src="https://secure.eu1.echocdn.com/resource/N1667399943.en_US/bundles/app-main.js" nonce="ar1b2p6qdivbky72gjav0z2v3" defer "" ></script>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script nonce="ar1b2p6qdivbky72gjav0z2v3" type="text/javascript/defer">
+  
+  
+  App = window.App || {};
+  App.Env = App.Env || {};
+
+  
+  
+  
+    App.Env.nonce = "ar1b2p6qdivbky72gjav0z2v3";
+
+    
+    App.Env.accountType = "PRO_PLUS_DOC_CLOUD";
+    App.Env.accountTransactionLevel = "NOT_APPLICABLE";
+
+    App.Env.dcWebOrigin = "https:\/\/documentcloud.adobe.com";
+
+    
+    App.Env.v4analytics = {
+      user  : {
+        user_account_type   : "Free",
+        user_role           : "pend",
+        user_app            : "A\-WEB",
+        user_visit          : "FirstTimeVisitor",
+        user_channel        : "supu_can_sign",
+        user_locale         : "en_US",
+        managing_application: "noMa",
+      },
+      source: {
+        appVersion: "2023.07.18195512",
+        appBuilt  : "07\/18\/23 08:05:47 PM"
+      }
+    };
+
+    App.Main({
+      root                  	: "/",
+      user                  	: {"seriouslySecureId":"CBJCHBCAABAArlABBhfG445DhNw6OiCDqvUHUyHaLCKA","loggedIn":false,"name":"","initials":"","email":"ajay.rawat@stfc.ac.uk","realEmail":"0e27a161-81d8-43fb-85a2-6533cc663d6e@single.use.user.adobesignmail.invalid","fullNameOrEmail":"ajay.rawat@stfc.ac.uk","company":"","jobTitle":"","isGroupEmail":false,"status":"PENDING"},
+      sharer                	: 
+                                     
+                                     
+                                     null, 
+                                
+      supportURL            	: "https:\/\/www.adobe.com\/go\/learn_esign_route_en",
+      termsOfUseURL         	: "https:\/\/www.adobe.com\/legal\/terms.eu1secureeu1echosigncom.echo.html?rand=0WAgiINpy7b1L3qL1u\-VSVYTg9UqyrOz",
+      privacyPolicyURL      	: "https:\/\/www.adobe.com\/privacy\/policy.html",
+      cookiesURL            	: "https:\/\/www.adobe.com\/privacy\/cookies.html",
+      consumerDisclosureURL 	: "https:\/\/www.adobe.com\/special\/misc\/consumerdisclosure.html",
+      marketingURL          	: "https:\/\/www.echosign.adobe.com\/en",
+      addLangSelect         	: true,
+      availableUserLocales  	: "[in_ID, ca_ES, cs_CZ, da_DK, de_DE, en_GB, en_US, es_ES, eu_ES, fr_FR, hr_HR, is_IS, it_IT, hu_HU, ms_MY, nl_NL, no_NO, nb_NO, nn_NO, pl_PL, pt_BR, pt_PT, ro_RO, sk_SK, sl_SI, fi_FI, sv_SE, vi_VN, tr_TR, ru_RU, uk_UA, th_TH, ja_JP, zh_CN, zh_TW, ko_KR]",
+      acrobatOrReader       	: false,
+      sessionTimeout        	: "30",
+      isMultiSignAvailable    : false,
+      multiSignMaxDigSigAllowed  : 10,
+      cloudSignaturesEnabled : false,
+      digitalSignatureExternalEnabled : false,
+      cloudSignaturesExternalEnabled : true,
+      sessionRefreshFrequency	: "5",
+      sessionRefreshWarningPeriod: "2",
+      resolvedLocale        	: "en_US",
+      locale        			: "en_US".replace(/_/,'-'),
+      
+      webclient    				: {
+        accessToken: "3AAABLblqZhBP8z7rz5pdvQHz71AYsp5Ag8YhSg1uioARvIiIx8ZePZDOYptYQcGJ\-CHun5FFQmwNdYDhJy\-JQ_80KfgamwUv",
+        refreshToken: "3AAABLblqZhAHE0UmLwWx6vBnlRX789ZLLYxo9a32MVsTmGjaDnsYEiLYiRAJP0Ua8cV9ESogSVk*",
+        clientId: "UB7E5BXCXY",
+        accessTokenLifetime: 3599,
+        baseUri: "https:\/\/api.eu1.echosign.com\/",
+        isIMSToken: false,
+        apiVersion : "v5"
+      },
+      isDevelopmentServer   	: false,
+      logoType              	: "default",
+	  defaultSecureDomainUrl	: "https:\/\/eu1.documents.adobe.com",
+      isFast                 	: "true" === "true",
+      plugins                	: {},
+      oneDriveAppId				: "ae00f875\-2b54\-490f\-a4fb\-a106259b1f44",
+      oneDriveAppIdAdobeCom	 	: "f816435d\-1f29\-421a\-a525\-e631da406622",
+      dcApiEndpoint				: "",
+      isGovCloud   	        : false,
+      reportAbuseRootUrl     : "https://static.echocdn.com/reportabuse",
+      noChrome               : false
+    });
+
+    App.Env.authRedirectURL = false ? "" : "";
+
+    App.Env.plugins.signcommon = {
+      pluginUrl: "https:\/\/static.echocdn.com\/signcommon\/signcommon\-launcher.js",
+      domain: "https:\/\/static.echocdn.com\/signcommon",
+      dcRootUrl: "https:\/\/static.echocdn.com\/dc"
+      // DO NOT SPECIFY domRoot -- CDN will render the header in the body!
+    };
+  </script>
+
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
+
+  <meta property="og:title" content="CW4.0_Timesheet_Jan 23_Dec23_Ajay Rawat" />
+<meta property="og:site_name" content="Acrobat Sign" />
+<meta property="og:description" content="Share with your colleagues and friends the simplicity of using Adobe Acrobat Sign to sign documents electronically. Click on the buttons below to spread the word! Learn more at &lt;a target=&#39;_blank&#39; href=&#39;https://acrobat.adobe.com&#39;&gt;https:\/\/acrobat.adobe.com&lt;/a&gt;" />
+<meta property="og:type" content="document" />
+<meta property="og:image" content="" />
+  <meta name="twitter:title" content="CW4.0_Timesheet_Jan 23_Dec23_Ajay Rawat" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Share with your colleagues and friends the simplicity of using Adobe Acrobat Sign to sign documents electronically. Click on the buttons below to spread the word! Learn more at &lt;a target=&#39;_blank&#39; href=&#39;https://acrobat.adobe.com&#39;&gt;https:\/\/acrobat.adobe.com&lt;/a&gt;" />
+<meta name="twitter:image" content="" />
+
+  <script type="text/javascript" src="https://secure.eu1.echocdn.com/resource/N1567624239.en_US/bundles/app-esign.js" nonce="ar1b2p6qdivbky72gjav0z2v3" defer "" ></script>
+<script type="text/javascript" src="" lazyload_href="https://secure.eu1.echocdn.com/resource/1371794091.en_US/bundles/component-viewfields.js" ></script>
+<script type="text/javascript" src="" lazyload_href="https://secure.eu1.echocdn.com/resource/1679050799.en_US/bundles/dcsignpanel.js" ></script>
+<script nonce="ar1b2p6qdivbky72gjav0z2v3" type="text/javascript/defer">
+    (function(){
+      var participantDefinedSigner = {signature : null};
+      
+      // set up esign data
+	    var config = {
+        agreementId                                : 'CBJCHBCAABAAPBTPE16FclRmekxuBM3Oi2G2dSM7W3vb',
+        widgetId                                   : '',
+        agreementName                              : "CW4.0_Timesheet_Jan 23_Dec23_Ajay Rawat",
+        widget                                     : false,
+        token                                      : "",
+        experience                                 : "68529675343111305158289515999898080829",
+        webIdentityId                              : "",
+        srcDocumentId                              : "CBJCHBCAABAADYK49hak3EOO1qfAtJxMBcufaJSAkkW5",
+        kbaTransactionId                           : "",
+        role                                       : "SIGNER",
+        showWellFormattedSignature                 : true,
+        minimumScribbleLength                      : 35,
+        showRegButton                              : false,
+        showManagePageLink                         : true,
+        showRefusalNotificationMessage             : true,
+        showMessage                                : true,
+        showSendLink                               : true,
+        cursiveFontCSSClass                        : "adobehanda",
+        signerNameIsEditable                       : "true",
+        canSaveScribble                            : false,
+        canSaveImage                               : false,
+        signatureInputTypes                        : "[TYPED, SCRIBBLE, IMAGE]",
+        esignSaveEnabled                           : true,
+        esignSaveTime                              : 5,
+        showPdfLinks                               : true,
+        showReadAgreementOption                    : true,
+        showReportAbuseOption                      : true,
+        uploadUrl                                  : "https:\/\/eu1.documents.adobe.com\/public\/attachmentUpload?aid=CBJCHBCAABAAPBTPE16FclRmekxuBM3Oi2G2dSM7W3vb",
+        writtenSignatureUploadUrl                  : "https:\/\/eu1.documents.adobe.com\/public\/writtenSignatureUpload?aid=CBJCHBCAABAAPBTPE16FclRmekxuBM3Oi2G2dSM7W3vb",
+        participantRole                            : "SIGNER",
+        pid                                        : "CBJCHBCAABAAe\-X4igwKhKmrc6BughFy9sFOpX9iWtGI",
+        webformSaveEnabled                         : false,
+        webformSaveOnOpenEnabled                   : false,
+        webformEsignViewEnabled                    : false,
+        webformAgreementNameEditable               : false,
+        webformSaveCancelDisabled                  : false,
+        signerAuthMethod                           : "",
+        
+        remoteHostUrl: false,
+        
+        delegateURL                                : "/public/resend?pid=CBJCHBCAABAAe\-X4igwKhKmrc6BughFy9sFOpX9iWtGI",
+        auditTrailURL                              : "/account\/audit?aid=CBJCHBCAABAAPBTPE16FclRmekxuBM3Oi2G2dSM7W3vb",
+        version                                    : "0.9.0.2023.07.18195512",
+        customerTermsURL                           : "",
+        customerConsumerDisclosureUrl              : "",
+        maxFileAttachmentUploadSize                : "5242880",
+        maxWrittenUploadSize                       : "10485760",
+        agreeToTermsEntity                         : "Ela Schraps",
+        showPhishingWarningPayment                 : false,
+        showPhishingWarningWebForm                 : false,
+        bubblesEnabled                             : false,
+        socialEnabled                              : false,
+        
+        socialDescription                          : "Share with your colleagues and friends the simplicity of using Adobe Acrobat Sign to sign documents electronically. Click on the buttons below to spread the word! Learn more at <a target='_blank' href='https://acrobat.adobe.com'>https:\/\/acrobat.adobe.com</a>",
+        facebookEnabled                            : false,
+        facebookUrlEncoded                         : "https%3A%2F%2Fwww.facebook.com%2FAdobeDocumentCloud",
+        googlePlusEnabled                          : false,
+        googlePlusUrl                              : "https:\/\/plus.google.com\/u\/0\/+AdobeAcrobat\/posts",
+        linkedInEnabled                            : false,
+        linkedInUrl                                : "https:\/\/www.linkedin.com\/company\/adobe\-document\-cloud",
+        twitterEnabled                             : false,
+        twitterUrl                                 : "https:\/\/adobe.ly\/AdobeSign",
+        twitterDefaultTweet                        : "So fast \x26 easy – I used Adobe Acrobat Sign to sign a document electronically.",
+        twitterUserName                            : "Acrobat",
+        esignMarketingBrand                        : "ADOBE",
+        hosted                                     : "",
+        isDigitalSignPhase                         : false,
+        isWrittenSignPhase                         : false,
+        isReflowProcessingComplete                 : false,
+        isReflowButtonAvailable                    : false,
+        dvUrl                                      : "https:\/\/documentcloud.adobe.com\/dc\-sign\-preview\-wrapper\/index.html",
+        reflowPdfUrl                               : "https:\/\/eu1.documents.adobe.com:443",
+        isReadyForDigitalSignature                 : false,
+        isAgreementPayable                         : false,
+        isSendLimitExceeded                        : false,
+        isAgreementPaid                            : false,
+        braintreeClientToken                       : "",
+        paymentsDomain                             : "",
+        localDigSigSigningOptionEnabled            : false,
+        cloudDigSigSigningOptionEnabled            : false,
+        isPaymentsTestMode                         : false,
+        digitalSignaturesRemoteCloudSigningEnabled : false,
+        isDigitalSignatureSigningRemotely          : false,
+        allowDigitalSignatureReasonInput           : false,
+        enabledCloudSigningProviders               : ["A-Trust","ADACOM","Asseco SimplySign","BankID Norway","BankID Sweden","Beijing Certificate Authority","CertSign","Cleverbase","ComSign","D-Trust","Digicert + QuoVadis","DigiCert One Americas","DigiCert One Europe","DigiCert One Switzerland","Digidentity","Docaposte Certinomis","Entrust","Finnish Trust Network","GlobalSign","GSE","IDIN","InfoCert","Intesi Group Cloud Signature","Itsme","MitID","NemID","PrimeSign","PSC World","Sectigo","Seiko Cloud Signatures","SK ID Solutions","SPID","SSL.com","Trans Sped mSign","TrustPro","Universign","VIDA","Worldline","ZealiD"],
+        localSigningAvailable                      : false,
+        digSigDelegationFromSignPageAvailable      : true,
+        useUidDigSigLib                            : false,
+        isSingPassServiceAvailable                 : false,
+        postSignRedirectUrl                        : "",
+        postSignRedirectDelay                      : "",
+        selfSignCompletionUrl                      : "",
+        noChrome                                   : "",
+        apiAgreementCapabilityId                   : "3AAABLblqZhCBvur6oXQdOERqyBHepf8gWKJwo8cuJIdCCb14tm1dhxXjPXWkJtlcv8sUWicuaQPzdkmcXqaVygwtFjJftuxK",
+        signerAgreementCapabilityId                : "3AAABLblqZhBykYjFztJVxiJvmJxlpnesDvoZRkmA7g\-GW7\-XyPHowJ9DfPWcgvk0\-3FpU62tJGTqMyODAIeaQmwj6OqyZb2s",
+        participantId                              : "3AAABLblqZhBhoRyG7sAiW0M4UMXXYjYRccJtFi0pl1Vdfm5bNeSHMHBFqaSfdGDV_4GO8kzQr1JN7zrTMvMK_nbZB_rp_YEU",
+        participantSetId                           : "3AAABLblqZhD4p4t9y10UuvCQGG94bTttV9SNdDMbkTvojG6ZPpvE6ydh7Qp4twFRNp0zaK0eKz5QyGvdva9\-dksS9Bg4ljDO",
+        numSignedParticipants                      : "",
+        isEmbeddedAcrobatSend                      : false,
+        isModified                                 : false,
+        isMultisign                                : false,
+        enableStateParameterCheck                  : false,
+        lastModifiedBy                             : "",
+        signatureImageAvailable                    : true,
+        mobileSignatureCaptureAvailable            : true,
+        mandatoryMobileSignatureCapture            : false,
+        mobileSignatureCaptureWorkflowTimeout      : 5,
+        companyName                                : "Acrobat Sign",
+        writtenSignaturesEnabled                   : true,
+        vaultingWorkflow                           : false,
+        isAgreeToTermsChecked                      : true,
+        isParticipantForcedWritten                 : false,
+        termsOfUseFlavor                           : "AGREE_WHEN_SIGNING",
+        hasAlwaysVisibleFooter                     : false,
+        isRequiredHyperlinkAvailable               : true,
+        selectFilesLocalUploadEnabled              : true,
+        maxUploadableImageSize                     : 5242880,
+        digSigFields                               : 0,
+        privacyConsentPopupAvailable               : true,
+        uploadableCloudConnectorsEnabled           : ["GOOGLE","DROPBOX","BOXNET"],
+        adobeAcrobatReaderMobileAppUrl             : "http:\/\/www.adobe.com\/go\/signscan",
+        viewAgreementUrl                           : "\/public\/viewAgreement?readerMode=true\x26aid=CBJCHBCAABAAPBTPE16FclRmekxuBM3Oi2G2dSM7W3vb\x26tsid=CBFCIBAA3AAABLblqZhCmeSDINtEMvFURtWjldkm3_34dk_\-GN_ec9KYR8yaa9ZKCCuCpe8XJnG5aMj8a2jypOVqcX7RoCyqyC_j1t6y_",
+        personalizedEmail                          : "",
+        clearDocumentAlwaysHidden                  : false,
+        eSignRequiresDocumentReview                : false,
+        phoneNumber                                : "",
+        isSignatureReasonRequired                  : false,
+        isCustomSignatureReasonEnabled             : true,
+        isMultipleEsignAuthEnabled                 : false,
+        isEmailPrefilled                           : false,
+        skipSignLoginForMandatorySAML              : false,
+        isRedirectionEnabled                       : false,
+        isSUSIRedirectionEnabled                   : false,
+        isLastEsignReauthenticationEnabled         : false,
+        authenticateSignatureField                 : false,
+        shouldIndependentAuthChallengeBeEnforcedForSigner : false,
+        locale                                     : "en_US".replace("_", "-"),
+        allowESignatureReasonInput                 : false,
+        isQuickFillViewingEnabled                  : false,
+        isQuickFillViewingAvailable                : true,
+        isQuickFillAutoOpen                        : false,
+        isEsignMobilePanZoomAvailable              : false,
+        requireRecipientNameEnabled                : true,
+        requireRecipientNameMandatory              : false,
+        isDelegationV6Enabled                      : true,
+        restartAgreementAvailable                  : false,
+        restartAgreementEnabled                    : false,
+        restartAgreementVisible                    : false,
+        availablePhoneCountryCodes                 : "AF AL DZ AO AR AM AW AU AT AZ BH BD BY BE BZ BJ BM BT BO BA BW BR BN BG MM KH CM CA CL CN CX CC CO CD CG CR HR CW CY CZ DK EC EG SV GQ EE ET FO FI FR GF PF GA GE DE GH GI GR GP GT GY HN HK HU IS IN ID IQ IE IL IT CI JP JO KZ KE KI KR XK KW LV LB LT LU MO MK MW MY MV MT MQ MU YT MX MN ME MA NA NP NL AN NC NZ NI NG NO OM PK PA PG PY PE PH PL PT QA RO RU RW RE PM SA SN RS CS SL SG SK SI SB ZA ES LK SD SE CH TW TZ TH TN TR UG UA AE GB US UY UZ VA VE VN WF YE ZM ZW",
+        defaultPhoneCountryCode                    : "US",
+        isLastNameFirst                            : false,
+        participantDefinedSigner                   : participantDefinedSigner,
+        isDigIdAuth                                : false,
+        digIdVerifiedBy                            : "",
+        sessionId                                  : "9665110808F25B6067A2D3B13EE030DB.app\-b13",
+        unknownSigners                             : [
+          
+        ],
+        signatureReasons                           : [
+          
+        ],
+        hideUserProfileInfo                        : true,
+        declineReasons                           : [
+          
+        ],
+        isUnregisteredUser: true, 
+        isNotIE11: !App.Env.feature.ie11,
+        clickableUrlInAgreementEmailEnabled:  false,
+        allowIMSOnPostEsign:  true
+      };
+      App.Env.plugins.ndi = {
+        domain  : "https:\/\/static.echocdn.com\/ndi",
+        url: "https:\/\/static.echocdn.com\/ndi\/ndi\-bundle.js"
+      };
+
+      
+      config.iframeUIDSigningEnabled = true;
+      
+        config.canDelegate = true;
+      
+        config.sendersAccountSecureId = "CBJCHBCAABAAHDtk1fXtS28nNJODkE1KQkpsKf2BXtMG";
+      
+        config.auditAvailable = true;
+      
+        config.allowDecline = true;
+      
+        config.requireDeclineReason = true;
+      
+        config.allowCustomDeclineReason = true;
+      
+        config.reportAbuseOpenOnLoad = false;
+      
+      config.termsOfServiceUrl = "https://www.adobe.com/legal/terms-linkfree.iframeversion.eu1secureeu1echosigncom.echo.html?rand=x0wtLtScpYzrzObZ_uDzp0S80NUEN7AY";
+      config.privacyPolicyUrl = "https:\/\/www.adobe.com\/privacy\/policy\-linkfree.iframeversion.eu1secureeu1echosigncom.echo.html?rand=iu3JjEjT9IvTnlKJm0wC18Vrz7s2VcJh";
+      config.consumerDisclosureURL = "https://www.adobe.com/legal/consumer-disclosure-linkfree.iframeversion.eu1secureeu1echosigncom.echo.html?rand=sDHzqUFK1wCKkwVYc4DkWciCHX91I-tU";
+
+      new App.Esign ( config );
+      App.EventBus.trigger('esign:showLoading', {text : i18n.js.esign_preparing_doc()});
+    }());
+  </script>
+	
+
+  <link rel="stylesheet" type="text/css" media="screen" href="https://secure.eu1.echocdn.com/resource/1730650309/bundles/toast-message.css" nonce="ar1b2p6qdivbky72gjav0z2v3" />
+
+
+
+
+
+  
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script nonce="ar1b2p6qdivbky72gjav0z2v3">
+    window.fedsConfig = window.fedsConfig || {};
+    window.fedsConfig.privacy = window.fedsConfig.privacy || {};
+    window.fedsConfig.privacy.otDomainId = "7a5eb705\-95ed\-4cc4\-a11d\-0cc5760e93db"
+    window.fedsConfig.privacy.footerLinkSelector = '#echo-nav-footer.footer-consent-link';
+  </script>
+
+  <script nonce="ar1b2p6qdivbky72gjav0z2v3" type="text/javascript" defer>
+    window.addEventListener("adobePrivacy:PrivacyConsent", function() {
+      window.privacyEvent = true;
+    });
+  </script>
+
+  <script nonce="ar1b2p6qdivbky72gjav0z2v3" type="text/javascript" defer>
+    window.addEventListener("adobePrivacy:PrivacyCustom", function() {
+      window.privacyEventCustom = true;
+    });
+  </script>
+
+  <script nonce="ar1b2p6qdivbky72gjav0z2v3" type="text/javascript" defer>
+    window.addEventListener("adobePrivacy:PrivacyReject", function() {
+      window.privacyEventReject = true;
+    });
+  </script>
+
+  <link nonce="ar1b2p6qdivbky72gjav0z2v3" rel="stylesheet" type="text/css" href="https://www.adobe.com/etc/beagle/public/globalnav/adobe-privacy/latest/privacy.min.css">
+  <!-- Load the polyfill only for IE broswer -->
+  
+  <script nonce="ar1b2p6qdivbky72gjav0z2v3" src="https://www.adobe.com/etc.clientlibs/globalnav/clientlibs/base/privacy-standalone.js" defer ></script>
+
+
+  
+
+  <script nonce="ar1b2p6qdivbky72gjav0z2v3" type="text/javascript">
+    (function(win, doc, style, timeout) {
+      var STYLE_ID = 'at-body-style';
+
+      function getParent() {
+        return doc.getElementsByTagName('head')[0];
+      }
+
+      function addStyle(parent, id, def) {
+        if (!parent) {
+          return;
+        }
+
+        var style = doc.createElement('style');
+        style.id = id;
+        style.innerHTML = def;
+        parent.appendChild(style);
+      }
+
+      function removeStyle(parent, id) {
+        if (!parent) {
+          return;
+        }
+
+        var style = doc.getElementById(id);
+
+        if (!style) {
+          return;
+        }
+        parent.removeChild(style);
+
+      }
+
+      addStyle(getParent(), STYLE_ID, style);
+      setTimeout(function() {
+        removeStyle(getParent(), STYLE_ID);
+      }, timeout);
+    }(window, document, "#defaultPromoId, #upgradeTrialMarquee {opacity: 0}", 1200));
+  </script>
+
+
+
+  
+
+  
+</head>
+
+
+
+
+<body class="mlw">
+  	
+  	
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+
+<div id="header">
+  
+    
+    
+    
+    
+    
+      
+         
+        
+          <script nonce="ar1b2p6qdivbky72gjav0z2v3" type="text/javascript/defer">
+            jQuery(document).ready(function () {
+              var $header = jQuery('#header');
+              $header.addClass('navbar fixed-top');
+                
+            });
+          </script>
+          
+            <div class="container-fluid es-header    " >
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- If only new reporting is available -->
+
+
+
+  
+  
+    
+  
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+  <div id="echo-nav-header" class="nav-clearfix">
+  
+    <div class="banner-bar" role="banner">
+      
+      
+        
+            <div class="banner-bar-col col-xl-4 col-lg-4 col-md-5 col-sm-6 ">
+          
+            
+            
+            <a href="/" class="header-logo">
+          
+          <span class="nav-trefoil" data-analytics-click="nav-trefoil">Adobe Acrobat Sign</span>
+          
+            </a>
+          
+            </div>
+        
+        
+      
+      
+
+        
+          <div id="esignWritten" class="col-xl-4 col-lg-4 col-md-4 d-none d-md-block"></div>
+        
+
+      
+      <ul role="presentation" class="col-xl-4 col-lg-3 col-md-3 col-sm-3 banner-nav" >
+
+        
+        
+          
+
+          
+        
+
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+        
+        
+    
+
+
+
+    
+    
+      <li id="nav-help-tab" role="presentation" class="help-tab">
+            
+            <a role="button" aria-haspopup="true" aria-expanded="false" aria-owns="id-helpbar-dropdown-container" tabindex="0">
+                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="icon-help"
+                     alt="Get Help" />
+            </a>
+            <div class="dropdown-triangle-container">
+                <div class="icon-navbar-dropdown-triangle"></div>
+            </div>
+
+            
+            <div id="id-helpbar-dropdown-container" class="helpbar-dropdown-container" role="menu">
+              <ul id="id-helpbar-dropdown" class="helpbar-dropdown" role="presentation">
+                
+                    
+                    <li role="presentation">
+                        
+                        <a href="https://www.adobe.com/go/adobesign-user-guide" data-analytics-click="help-guide" target="_blank" role="menuitem">
+                            User Guide
+                        </a>
+                    </li>
+
+                    
+                    <li role="presentation">
+                        
+                        <a href="https://helpx.adobe.com/sign/tutorials.html" data-analytics-click="help-tutorial" target="_blank" role="menuitem">
+                            Tutorials
+                        </a>
+                    </li>
+
+                    
+                    <li role="presentation">
+                        <a href="https://www.adobe.com/go/learn_esign_route_en?locale=en-US" data-analytics-click="help-support" target="_blank" role="menuitem">
+                            Contact Support
+                        </a>
+                    </li>
+
+                    
+                    
+                
+
+                    
+                    
+                       <li role="presentation">
+                          <a data-analytics-click="legalNotices" target="_blank" role="menuitem" id="coreLegalNoticesLink">
+                            Legal Notices
+                          </a>
+                       </li>
+                    
+                </ul>
+            </div>
+        </li>
+        
+        
+            <script nonce="ar1b2p6qdivbky72gjav0z2v3" type="text/javascript/defer">
+              jQuery("#nav-help-tab").echosign_MenuButton({
+                triggerElement: "#nav-help-tab > a[aria-haspopup], #nav-help-tab > a[aria-haspopup] + div.dropdown-triangle-container",
+                menuElement: "#id-helpbar-dropdown-container",
+                openClassName: "helpbar-dropdown-container-dropped",
+                closeClassName: null,
+                expandOnHover: true,
+                menuItemSelector: "[role=menuitem]"
+              });
+            </script>
+        
+
+      
+      
+      <script nonce="ar1b2p6qdivbky72gjav0z2v3">
+        document.getElementById("coreLegalNoticesLink").addEventListener("click", function () {
+          App.Common.showAboutBox(jQuery('#nav-help-tab > a[aria-haspopup]'));
+        });
+      </script>
+      
+
+    
+
+
+
+        
+        
+
+        
+        
+
+        
+        
+            
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+ <li class="dynamic-view" role="presentation">
+   <a href="#" rel="dynamicView" data-analytics-click="dynamicView">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span hidden id="cspEventAttribute-f6892345-3cb7-4143-bd35-166835562ca3-1" data-csp-event="onclick"
+      data-csp-target="parent"></span>
+<script nonce="ar1b2p6qdivbky72gjav0z2v3">
+  (function () {
+    var styleSheetId = "csp-link-styles";
+    var styleSheet = document.getElementById(styleSheetId);
+    if (styleSheet == null) {
+      var style = document.createElement('style');
+      style.id = styleSheetId;
+      document.getElementsByTagName('head')[0].appendChild(style);
+      style.innerHTML = '.js-link-cursor {cursor: pointer}';
+    }
+
+    
+    
+    var marker = document.getElementById("cspEventAttribute\-f6892345\-3cb7\-4143\-bd35\-166835562ca3\-1");
+    
+    var eventElement = marker.parentElement;
+    if (marker.getAttribute('data-csp-target') === "sibling") {
+      eventElement = marker.previousElementSibling;
+    }
+    
+    eventElement[marker.getAttribute('data-csp-event')] = function (event) {
+      return false;
+    };
+  })();
+</script>
+
+     <div class="icon-dynamic-view"></div>
+   </a>
+</li>
+
+        
+
+        
+        
+
+        
+        
+
+      </ul>
+    </div>
+
+<!-- Do not render tabs if we are a docCloudLogin, even if renderHeaderTabs is set to true -->
+<!-- The check for !docCloudLogin is now performed in main-layout.tag and main-layout-wide.tag as part of evaluating
+ the renderHeaderTabs attribute -->
+
+  </div>
+
+
+            </div>
+          
+        
+        
+      
+    
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<script nonce="ar1b2p6qdivbky72gjav0z2v3" type="text/javascript">
+  var switchAccount;
+  switchAccount = document.querySelector('.switch_account');
+  switchAccount && switchAccount.addEventListener('click', function() {
+    window.AccountSwitchingUtil.handleAccountSwitchMenuItemClick("\/public\/accountSwitchingJS");
+  });
+</script>
+
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  <!-- content-sub-header (for main-layout-wide.tag pages only! -->
+  
+    
+      
+      
+        
+        
+      
+
+      <div id="contentSubHeader" class=""></div>
+    
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script nonce="ar1b2p6qdivbky72gjav0z2v3" type="text/javascript/defer">
+    function logInToAlternateLocation(shardPrefix, url, failureCallback) {
+      var self = this;
+      if (url === undefined) {
+        url = window.location.pathname
+      }
+      loginPageAjaxService.getFederatedURLForLoggedInUser(shardPrefix, window.location.hostname.toLowerCase(), url, {
+        callback: function(options) {
+          if (options && options.url) {
+            _doLoginRedirect.call(self, options.url);
+          } else {
+            if (failureCallback) {
+              failureCallback();
+            }
+            alert('Unable to retrieve login information for ' + shardPrefix);
+          }
+        },
+        errorHandler: function() {
+          if (failureCallback) {
+            failureCallback();
+          }
+          alert('Unable to log in to ' + shardPrefix + '.  Please check the server logs for more information.');
+        }
+      });
+    }
+    function _doLoginRedirect(url) {
+      // redirect the page to the new URL
+      window.location.href = url;
+    }
+
+    
+    window.addEventListener("hashchange",  function(e) {
+      var hash = decodeURIComponent(window.location.hash);
+      if (!/^#shardRedirect/.test(hash)) {
+        return true;
+      }
+      e.preventDefault();
+      
+      logInToAlternateLocation("", hash);
+      return false;
+    });
+  </script>
+
+
+
+	  
+
+    <!-- content goes here -->
+    <div id="mainContent"
+         class=' no-header-tabs'
+         role="main">
+    
+      
+
+
+
+
+<div id="toast-container" class="toast-container">
+  <div id="toast-main-view" class="toast">
+    <svg id="toast-variant-icon" focusable="false" aria-hidden="true">
+      </svg>
+    <div class="toast-body">
+      <div class="toast-content"></div>
+      <button id="toast-action-click" class="toast-button toast-button--overBackground toast-button--quiet">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span hidden id="cspEventAttribute-3f0c0617-3dc6-4275-8854-cf8aa8d5cfb6-2" data-csp-event="onclick"
+      data-csp-target="parent"></span>
+<script nonce="ar1b2p6qdivbky72gjav0z2v3">
+  (function () {
+    var styleSheetId = "csp-link-styles";
+    var styleSheet = document.getElementById(styleSheetId);
+    if (styleSheet == null) {
+      var style = document.createElement('style');
+      style.id = styleSheetId;
+      document.getElementsByTagName('head')[0].appendChild(style);
+      style.innerHTML = '.js-link-cursor {cursor: pointer}';
+    }
+
+    
+    
+    var marker = document.getElementById("cspEventAttribute\-3f0c0617\-3dc6\-4275\-8854\-cf8aa8d5cfb6\-2");
+    
+    var eventElement = marker.parentElement;
+    if (marker.getAttribute('data-csp-target') === "sibling") {
+      eventElement = marker.previousElementSibling;
+    }
+    
+    eventElement[marker.getAttribute('data-csp-event')] = function (event) {
+      Utils.ToastMessage.handleViewClick()
+    };
+  })();
+</script>
+
+        <span id="toast-action-label" class="toast-button-label"></span>
+      </button>
+    </div>
+    <div class="toast-buttons">
+      <button aria-label="close" class="toast-clearButton toast-clearButton--medium toast-clearButton--overBackground">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span hidden id="cspEventAttribute-3e34ca9e-c93b-4996-85a4-5647ec70179f-3" data-csp-event="onclick"
+      data-csp-target="parent"></span>
+<script nonce="ar1b2p6qdivbky72gjav0z2v3">
+  (function () {
+    var styleSheetId = "csp-link-styles";
+    var styleSheet = document.getElementById(styleSheetId);
+    if (styleSheet == null) {
+      var style = document.createElement('style');
+      style.id = styleSheetId;
+      document.getElementsByTagName('head')[0].appendChild(style);
+      style.innerHTML = '.js-link-cursor {cursor: pointer}';
+    }
+
+    
+    
+    var marker = document.getElementById("cspEventAttribute\-3e34ca9e\-c93b\-4996\-85a4\-5647ec70179f\-3");
+    
+    var eventElement = marker.parentElement;
+    if (marker.getAttribute('data-csp-target') === "sibling") {
+      eventElement = marker.previousElementSibling;
+    }
+    
+    eventElement[marker.getAttribute('data-csp-event')] = function (event) {
+      Utils.ToastMessage.hideToast()
+    };
+  })();
+</script>
+
+        <svg class="toast-icon uiIcon-CrossMedium" focusable="false" aria-hidden="true">
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+<script nonce="ar1b2p6qdivbky72gjav0z2v3" type="application/javascript">
+  try {
+    if(localStorage && localStorage.toastMessage) {
+      
+      localStorage.removeItem("toastMessage");
+      
+    }
+  } catch (e) {
+    //  access to local storage is denied.
+  }
+</script>
+
+    
+      
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+      <link rel="stylesheet" type="text/css" media="screen" href="https://secure.eu1.echocdn.com/resource/1715228063/bundles/esignResponsive.css" nonce="ar1b2p6qdivbky72gjav0z2v3" />
+
+    </div>
+
+    
+    <div id="tou-frame">
+    <button role="button" class="btn btn-primary cancel"
+        title="Close"
+        aria-label="Close"
+    >Close</button>
+    <section></section> </div>
+
+  <div id="es-underlay">
+    <div class="terms-of-use">
+      <div class="row tou-container bottom clearfix">
+        <div class="terms col-xl-9 col-lg-9 col-md-9 col-sm-8">
+          <span class="tou-content"></span>
+        </div>
+        <div class="tou-btn col-xl-3 col-lg-3 col-md-3 col-sm-4">
+          <div class="tou-btn-inner">
+            <button tabindex="100" class="btn btn-primary click-to-accept-tou"></button>
+          </div>
+        </div>
+      </div>
+      <div class="row embedded-container bottom clearfix">
+      </div>
+    </div>
+  </div>
+
+  
+
+    <!--  navigation bar bottom -->
+    
+      
+        
+	      
+          
+          <div id="footer" class="es-footer navbar fixed-bottom">
+            <section app-footer></section>
+            
+              
+              
+                
+                  
+                  
+                    <div class="es-footer-inner">
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="echo-nav-footer" class="" role="contentinfo">
+        
+            
+
+
+
+
+
+
+
+
+
+  
+  
+  
+    
+    
+  
+
+
+
+<div id="footer-lang">
+  <label for="localeSelect">Language</label>
+  <select id="localeSelect" class="locale-select">
+    
+      <option value="in_ID" >Bahasa Indonesia</option>
+    
+      <option value="ca_ES" >Català: Espanya</option>
+    
+      <option value="cs_CZ" >Čeština</option>
+    
+      <option value="da_DK" >Dansk</option>
+    
+      <option value="de_DE" >Deutsch</option>
+    
+      <option value="en_GB" >English: UK</option>
+    
+      <option value="en_US" selected>English: US</option>
+    
+      <option value="es_ES" >Español</option>
+    
+      <option value="eu_ES" >Euskara: Espainia</option>
+    
+      <option value="fr_FR" >Français</option>
+    
+      <option value="hr_HR" >Hrvatski</option>
+    
+      <option value="is_IS" >Íslenska</option>
+    
+      <option value="it_IT" >Italiano</option>
+    
+      <option value="hu_HU" >Magyar</option>
+    
+      <option value="ms_MY" >Melayu: Malaysia</option>
+    
+      <option value="nl_NL" >Nederlands</option>
+    
+      <option value="no_NO" >Norsk</option>
+    
+      <option value="nb_NO" >Norsk: bokmål</option>
+    
+      <option value="nn_NO" >Norsk: nynorsk</option>
+    
+      <option value="pl_PL" >Polski</option>
+    
+      <option value="pt_BR" >Português: Brasil</option>
+    
+      <option value="pt_PT" >Português: Portugal</option>
+    
+      <option value="ro_RO" >Română</option>
+    
+      <option value="sk_SK" >Slovenčina</option>
+    
+      <option value="sl_SI" >Slovenščina</option>
+    
+      <option value="fi_FI" >Suomi</option>
+    
+      <option value="sv_SE" >Svenska</option>
+    
+      <option value="vi_VN" >Tiếng Việt</option>
+    
+      <option value="tr_TR" >Türkçe</option>
+    
+      <option value="ru_RU" >Русский</option>
+    
+      <option value="uk_UA" >Українська</option>
+    
+      <option value="th_TH" >ไทย</option>
+    
+      <option value="ja_JP" >日本語</option>
+    
+      <option value="zh_CN" >简体中文</option>
+    
+      <option value="zh_TW" >繁體中文</option>
+    
+      <option value="ko_KR" >한국어</option>
+    
+  </select>
+</div>
+
+        
+
+      
+    </div>
+
+  
+
+
+                    </div>
+                  
+                  
+                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+                
+			        
+		        
+	        </div>
+	      
+	    
+	  
+
+	<!-- interstitial -->
+	<div class="interstitial" style="display:block;">
+	 <div class="innerCnt">
+		<h3 class="text">Loading...</h3>
+		<div class="spinner large" role="progressbar"></div>
+	 </div>
+	</div>
+	<div class="modal-backdrop interstitial-backdrop white fade in" style="display:block;"></div>
+
+	
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    <script nonce="ar1b2p6qdivbky72gjav0z2v3" type="text/javascript/defer">
+        var sCodeSrc = '/static/site-analytics.js';
+
+        function loadAnalytic() {
+            window.scAnalytics = new ScAnalytics("Free", "pend", "A\-WEB", "FirstTimeVisitor","supu_can_sign","en_US","3", "noMa");
+            window.scAnalytics.onPageLoad();
+           if (typeof(Event) === 'function') {
+                var event = new Event('adobeSignAnalytics:ready');
+            } else {
+                var event = document.createEvent('Event');
+                event.initEvent('adobeSignAnalytics:ready', true, true);
+            }
+            window.dispatchEvent(event);
+        }
+
+        function loadAnalyticsWithError() {
+          console.log('Error while loading resource ' + sCodeSrc);
+          loadAnalytic();
+        }
+
+        function enableSiteCatalyst() {
+            if(window.scAnalytics) {
+                window.scAnalytics.enable();
+            }
+            else {
+              if(window.adobePrivacy) {
+                window.adobePrivacy.loadResource({path: sCodeSrc, type: 'script', async: true, successCallback: loadAnalytic, errorCallback: loadAnalyticsWithError});
+              }
+            }
+        }
+
+        function disableSiteCatalyst() {
+            if(window.scAnalytics) {
+                window.scAnalytics.disable();
+            }
+        }
+
+        if(window.privacyEvent) {
+          if(window.adobePrivacy) {
+            window.adobePrivacy.loadResource({path: sCodeSrc, type: 'script', async: true, successCallback: loadAnalytic, errorCallback: loadAnalyticsWithError});
+          }
+        } else {
+          window.addEventListener("adobePrivacy:PrivacyConsent", function () {
+            enableSiteCatalyst();
+          });
+        }
+
+        if(window.privacyEventReject) {
+         disableSiteCatalyst();
+        } else {
+          window.addEventListener("adobePrivacy:PrivacyReject", function () {
+            disableSiteCatalyst();
+          });
+        }
+
+        if(window.privacyEventCustom) {
+          if(window.adobePrivacy && window.adobePrivacy.activeCookieGroups().includes('C0002')) {
+            window.adobePrivacy.loadResource({path: sCodeSrc, type: 'script', async: true, successCallback: loadAnalytic, errorCallback: loadAnalyticsWithError});
+          }
+        } else {
+          window.addEventListener("adobePrivacy:PrivacyCustom", function(e) {
+            if(window.adobePrivacy && window.adobePrivacy.activeCookieGroups().includes('C0002')) { //C0002 is the performance category
+              enableSiteCatalyst();
+            }
+            else {
+              disableSiteCatalyst();
+            }
+          });
+        }
+
+
+
+    </script>
+  
+  
+
+
+<!-- END NEW SITECATALYST CODE LOADING -->
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+  
+
+
+	  <script nonce="ar1b2p6qdivbky72gjav0z2v3" type="text/javascript">
+		(function () {
+
+		  function processLazyLoad () {
+			// lazyload styles and scripts
+			var hrefs = jQuery('script,link').filter('[lazyload_href]').map(function () {
+			  var href = this.getAttribute('lazyload_href');
+			  return href;
+			});
+
+			if (hrefs.length === 0) {
+			  App.Lazyload.resolve();
+			} else {
+			  loadjs(hrefs, 'lazyload-done', {
+				success: function () {
+				  App.Lazyload.resolve();
+				},
+                error: function(notfound) {
+				  console.error('Lazyload failed to load:', notfound, 'continuing...');
+                  App.Lazyload.resolve();
+                },
+				async  : false
+			  });
+			}
+		}
+
+		
+			document.addEventListener('DOMContentLoaded', function() {
+			  var loadingTimer = setInterval(function () {
+				if (window.i18n && window.App) {
+				  clearInterval(loadingTimer);
+				  runDeferreds();
+				  processLazyLoad();
+				}
+			  }, 25);
+
+			  function runDeferreds() {
+				// deferred inline scripts
+				jQuery('script[type="text/javascript/defer"]').each(function () {
+				  jQuery.globalEval(this.textContent, {
+            nonce: "ar1b2p6qdivbky72gjav0z2v3"
+          });
+        });
+			  }
+			}, false);
+		
+		
+		})();
+	  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+        
+    
+
+
+
+
+
+
+		
+		<script nonce="ar1b2p6qdivbky72gjav0z2v3">try{_satellite.pageBottom();}catch(e){}</script>
+</body>
+</html>
