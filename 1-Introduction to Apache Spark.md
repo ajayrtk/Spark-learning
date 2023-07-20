@@ -26,7 +26,7 @@ Big Data primarily refers to data sets that are too large or complex to be dealt
 
 ## Sparks' History:
 
-* Developed by Mataei Zaharia
+* Developed by Matei Zaharia
 * 2009 - UC Berkely Amplabs
 * 2010 - Open sourced - BSD license
 * 2013 - Donated to Apache Software Foundation
