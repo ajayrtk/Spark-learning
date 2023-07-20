@@ -110,20 +110,20 @@ Big Data primarily refers to data sets that are too large or complex to be dealt
 
 3. ### Dataframe
 * Abstraction for SparkSQL
+* Concept of the dataset
 * Distributed collection of data ordered into the named column
 * Catalyst - extensible optimizer | optimization framework to improve productivity and performance of queries
-* Concept of the dataset
 
 4. ### MLib
 * Support various ML algorithms
 * Approx 10x faster than Mahout
 * Can be called from Java | Scala | Python
 * Scalable ML
-* Easily integrate with other tools | framework
+* Easily integrate with other tools and frameworks
 
 4. ### GraphX
 * Graph computation engine
-* Similar to tools like Neo4J, Girage
+* Similar to tools like Neo4J, Girafe
 * Used for graphical computations
 * Directed graph - vertex | edges concepts
 * Support various algorithms - PageRank | Connected Components | Triangle Counting
