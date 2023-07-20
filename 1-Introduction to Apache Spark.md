@@ -227,14 +227,14 @@ spark = SparkSession \
   * Worker process responsible for running individual tasks in Spark jobs
   * Runs of each worker node in the cluster
   * Communicate with the Driver and be responsible for executing tasks on the worker
-  * Return state | result report back to the Driver
+  * Return state or result report back to the Driver
   * Provide in-memory storage for RDD through a daemon service called Block Manager
   * Each application has its own separate executor processes
   
   3. **Cluster** **Manager**
-  * Has master and worker node
+  * CM has master and worker node
   * Responsible for managing and allocating the resources
-  * Support 4 cluster manager
+  * Spark supports 4 cluster managers
     * Standalone
     * Apache Mesos
     * YARN
