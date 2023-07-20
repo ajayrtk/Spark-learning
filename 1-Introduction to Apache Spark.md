@@ -192,7 +192,7 @@ Big Data primarily refers to data sets that are too large or complex to be dealt
 ```
 # Python code
 # The entry point into all functionality in Spark is the SparkSession class.
-# To create a SparkSession, just use SparkSession.builder
+# To create a basic SparkSession, just use SparkSession.builder
 
 from pyspark.sql import SparkSession
 
@@ -224,21 +224,21 @@ spark = SparkSession \
   * Responsible for maintain the state of the application running in the cluster
 
   2. Spark Executor
-    * Worker process responsible for running individual tasks in Spark jobs
-    * Runs of each worker nodes in the cluster
-    * Communicate with Driver and responsible for executing task on the worker
-    * Return state | result report back to the Driver
-    * Provide in memory storage for RDD through a daemon service called Block Manager
-    * Each application has own seperate executor processess
+  * Worker process responsible for running individual tasks in Spark jobs
+  * Runs of each worker nodes in the cluster
+  * Communicate with Driver and responsible for executing task on the worker
+  * Return state | result report back to the Driver
+  * Provide in memory storage for RDD through a daemon service called Block Manager
+  * Each application has own seperate executor processess
   
   3. Cluster Manager
-    * Has master and worker node
-    * Responsible for managing and allocating the resources
-    * Support 4 cluster manager
-      * Standalone
-      * Apache Mesos
-      * YARN
-      * Kubernetes
+  * Has master and worker node
+  * Responsible for managing and allocating the resources
+  * Support 4 cluster manager
+    * Standalone
+    * Apache Mesos
+    * YARN
+    * Kubernetes
 
 ## Deployment Modes:
 
