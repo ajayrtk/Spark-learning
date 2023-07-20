@@ -239,6 +239,7 @@ spark = SparkSession \
     * Apache Mesos
     * YARN
     * Kubernetes
+    *
 
 ## Deployment Modes:
 
