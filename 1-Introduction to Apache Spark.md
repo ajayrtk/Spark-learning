@@ -31,7 +31,7 @@ Big Data primarily refers to data sets that are too large or complex to be dealt
 * 2010 - Open sourced - BSD licence
 * 2013 - Donated to Apache Software Foundation
 * 2014 - Become top-level Apache Project 
-* Founded the company Databricks
+* Founded the company named Databricks
 
 ## Big Data Deployment View:
 ![My Image](images/bigdata_deployment_view.png)
@@ -49,7 +49,7 @@ Big Data primarily refers to data sets that are too large or complex to be dealt
   * MLib - Machine learning
   * GraphX - Graph processing
   * Structured processing - Stream processing
-* written in Scala - Functional programming language that runs in a JVM
+* Written in Scala - Functional programming language that runs in a JVM
 * Spark shell - interactive for learning, data exploration or ad hoc analytics available in Python and Scala
 * Spark Application - for large-scale data processing available in Python | Java and Scala
 * Distributed processing framework
@@ -168,7 +168,7 @@ Big Data primarily refers to data sets that are too large or complex to be dealt
 * Tool to analyse data interactively
 
 ## Spark Context:
-* Main Entry point to Spark functionality
+* Main entry point to Spark functionality
 * Represent the connection to Spark cluster
 * Get the current status of the Spark application
 * Set configuration
@@ -192,7 +192,7 @@ Big Data primarily refers to data sets that are too large or complex to be dealt
 ```
 # Python code
 # The entry point into all functionality in Spark is the SparkSession class.
-# To create a basic SparkSession, just use SparkSession.builder
+# To create a SparkSession, just use SparkSession.builder
 
 from pyspark.sql import SparkSession
 
@@ -212,16 +212,16 @@ spark = SparkSession \
   Spark application consist of:
 
   1. Spark Driver
-    * Process where the main method of program runs
-    * Controller of the Spark application
-    * Orchestrate paralle operations on the Spark cluster
-    * Cummunicate with other components like Sparl executor and cluster manager using SparkSession
-    * Instantiate SparkSession
-    * Request resources from cluster manager
-    * Transform Spark operation into DAG and schedule them
-    * Distributes execution as task across the Spark executor
-    * Maintain all the state of the Spark cluster
-    * Responsible for maintain the state of the application running in the cluster
+  * Process where the main method of program runs
+  * Controller of the Spark application
+  * Orchestrate paralle operations on the Spark cluster
+  * Cummunicate with other components like Sparl executor and cluster manager using SparkSession
+  * Instantiate SparkSession
+  * Request resources from cluster manager
+  * Transform Spark operation into DAG and schedule them
+  * Distributes execution as task across the Spark executor
+  * Maintain all the state of the Spark cluster
+  * Responsible for maintain the state of the application running in the cluster
 
   2. Spark Executor
     * Worker process responsible for running individual tasks in Spark jobs
